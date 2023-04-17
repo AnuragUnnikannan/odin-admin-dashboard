@@ -1,1 +1,1 @@
-# odin-admin-dasboard
+# odin-admin-dashboard
