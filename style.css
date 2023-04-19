@@ -21,25 +21,28 @@ body {
     height: 70px;
 }
 
-.main-container {
-    display: grid;
-    grid-template-columns: 1fr 4.5fr;
-}
-
 nav {
     background: #1992D4;
     color: white;
-    grid-row: 1 / 3;
     display: grid;
     grid-template-rows: 1fr 9fr;
-    padding: 0px 15px;
+    row-gap: 30px;
+    justify-content: center;
+    position: fixed;
+    width: 18%;
+    height: 100vh;
+    padding: 0px 20px;
+}
+
+.main-section {
+    margin-left: 18%;
 }
 
 .logo {
     display: flex;
-    gap: 5px;
+    gap: 10px;
+    justify-self: center;
     align-items: center;
-    height: 60px;
     padding-top: 10px;
 }
 
@@ -53,6 +56,7 @@ nav {
     gap: 25px;
     padding-left: 16px;
     font-size: 18px;
+    width: inherit;
 }
 
 .link-items {
@@ -65,11 +69,8 @@ nav {
 
 header {
     display: grid;
-    grid-template-columns: 2.5fr 1fr;
-    padding-left: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    column-gap: 50px;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px 40px;
     row-gap: 20px;
     border-bottom: 4px solid rgb(196, 196, 196);
 }
@@ -78,12 +79,11 @@ header {
     display: grid;
     grid-template-columns: 25px 1fr;
     height: 50px;
-    gap: 10px;
     align-items: center;
 }
 
 .search-bar input {
-    height: 30px;
+    height: 35px;
     border-radius: 20px;
     border: none;
     background: #E2E8F0;
@@ -96,10 +96,11 @@ input:focus {
 }
 
 .acc-settings {
+    justify-self: end;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     font-weight: bold;
 }
 
@@ -126,13 +127,9 @@ input:focus {
 
 .buttons {
     grid-column: 1 / 3;
-    /* display: grid;
-    grid-template-columns: repeat(3, auto);
-    justify-content: start;
-    gap: 50px; */
 }
 
-button {
+.buttons button {
     background: #1992D4;
     color: white;
     font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -161,7 +158,7 @@ main {
 .projects-grid {
     margin-top: 10px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 }
 
@@ -239,12 +236,45 @@ main {
     color: #707070;
 }
 
-@media (max-width: 650px) {
+.toggle {
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    width: 25px;
+    display: none;
+    background: transparent;
+    border: none;
+}
+
+@media (max-width: 970px) {
+    nav {
+        display: none;
+        width: auto;
+    }
+
+    .main-section {
+        margin-left: 0;
+    }
+
+    .buttons button {
+        width: 70px;
+    }
+
     main {
         grid-template-columns: auto;
     }
 
+    .toggle {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
     .acc-settings p {
         display: none;
+    }
+    
+    .acc-settings .profile-icons {
+        height: 40px;
     }
 }
