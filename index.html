@@ -290,10 +290,12 @@
         }
     });
     
-
+    
     main.addEventListener("click", () => {
-        nav.style.display = "none";
-        clicked = false;
+        if(document.body.clientWidth <= 970) {
+            nav.style.display = "none";
+            clicked = false;
+        }
     });
 
     
