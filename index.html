@@ -12,7 +12,6 @@
     <div class="main-container">
         <button class="toggle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>menu</title><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg></button>
         <nav>
-            <!-- <button class="toggle"> == </button> -->
             <div class="logo">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icons" viewBox="0 0 24 24"><title>view-dashboard</title><path d="M13,3V9H21V3M13,21H21V11H13M3,21H11V15H3M3,13H11V3H3V13Z" fill="currentColor"/></svg>
                 <h1>Dashboard</h1>
@@ -70,8 +69,7 @@
             <header>
                
                 <div class="search-bar">
-                    <img src="static/search.svg" alt="search" class="icons">
-                    <input type="search" name="search" id="search">
+                    <input placeholder="Search" type="search" name="search" id="search" autocomplete="off">
                 </div>
     
                 <div class="acc-settings">
@@ -80,14 +78,11 @@
                     <img src="static/user1.svg" alt="user1" class="profile-icons">
                 </div>
     
-                <div class="second-row">    
-                    <div class="buttons">
-                        <button>New</button>
-                        <button>Upload</button>
-                        <button>Share</button>
-                    </div>
-                </div>
-                
+                <div class="buttons">
+                    <button>New</button>
+                    <button>Upload</button>
+                    <button>Share</button>
+                </div>                
             </header>
     
             <main>
@@ -281,7 +276,7 @@
 
     window.addEventListener("resize", () => {
         
-        if(document.body.clientWidth <= 970) {
+        if(document.body.clientWidth <= 1000) {
             nav.style.display = "none";
             
         }
@@ -292,7 +287,7 @@
     
     
     main.addEventListener("click", () => {
-        if(document.body.clientWidth <= 970) {
+        if(document.body.clientWidth <= 1000) {
             nav.style.display = "none";
             clicked = false;
         }
